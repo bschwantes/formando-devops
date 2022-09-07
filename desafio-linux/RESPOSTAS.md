@@ -47,7 +47,7 @@ E adicionar a linha:
 ### 3.1 Autenticação confiável
 
 ```
-vi /etc/ssh/sshd\_config
+vi /etc/ssh/sshd_config
 PasswordAuthentication no
 ```
 
@@ -62,7 +62,7 @@ ssh-keygen -t ecdsa
 Copiar a chave pública para a VM:
 
 ```
-ssh-copy-id -i ~/.ssh/id\_ecdsa.pub vagrant@192.168.0.45
+ssh-copy-id -i ~/.ssh/id_ecdsa.pub vagrant@192.168.0.45
 ```
 
 Realizar a conexão SSH:
@@ -76,7 +76,7 @@ ssh vagrant@192.168.0.45
 Converter o arquivo para formato de Chave Primária:
 
 ```
-base64 -d id\_rsa-desafio-linux-devel.gz.b64 > chave.gz
+base64 -d id_rsa-desafio-linux-devel.gz.b64 > chave.gz
 gzip -d chave.gz
 chmod 600 chave
 vi chave
@@ -91,29 +91,34 @@ Converter a chave de OpenSSH para RSA:
 ssh-keygen -p -m pem -f chave
 ```
 
-No SSH server, modificar a permissão do authorized\_keys do user devel:
+No SSH server, modificar a permissão do authorized_keys do usuário `devel`:
 
 ```
-chmod 600 ~devel/.ssh/authorized\_keys
+chmod 600 ~devel/.ssh/authorized_keys
 ```
 
-4 - 
+## 4. Systemd
 
-systemctl status nginx.service
+```
+systemctl status nginx.service #Verifica o erro
 
 vi /etc/nginx/nginx.conf
 
-adicionar ';' no final da linha 45
-trocar as portas listen para 80
+# Adicionar ';' no final da linha 45
+# Trocar as portas listen para 80
 
 vi /usr/lib/systemd/nginx.service
-remover -BROKEN do ExecStart
+# Remover -BROKEN do ExecStart
 
 systemctl daemon-reload
 systemctl start nginx.service
+```
+Executar o comando:
 
+```
 curl http://127.0.0.1
 > Duas palavrinhas pra você: para, béns!
+```
 
 5 - 
 
