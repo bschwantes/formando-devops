@@ -16,5 +16,13 @@ passwd vagrant
 
 reboot
 
-2 -
+2 - 
+groupadd -g 2222 getup
+useradd -u 1111 -g getup -G bin getup
+
+visudo
+
+adicionar linha
+getup	ALL=(ALL)	NOPASSWD:ALL
+
 
