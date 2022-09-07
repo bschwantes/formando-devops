@@ -1,9 +1,0 @@
-HTTP/2 200 
-date: Wed, 07 Sep 2022 20:15:44 GMT
-content-type: application/json
-content-length: 89
-server: gunicorn/19.9.0
-hello: world
-access-control-allow-origin: *
-access-control-allow-credentials: true
-
