@@ -25,4 +25,14 @@ visudo
 adicionar linha
 getup	ALL=(ALL)	NOPASSWD:ALL
 
+3 - 
+
+Criei as chaves na máquina local 
+
+ssh-keygen -t ecdsa
+
+ssh-copy-id -i ~/.ssh/id_ecdsa.pub vagrant@192.168.0.45
+
+ssh vagrant@192.168.0.45
+
 
