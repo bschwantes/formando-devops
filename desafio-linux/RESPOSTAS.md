@@ -120,13 +120,18 @@ curl http://127.0.0.1
 > Duas palavrinhas pra você: para, béns!
 ```
 
-5 - 
+## 5. 
 
 
-6 - 
-6.1 O comando já estava funcionando. Nada foi feito.
+## 6. Rede
 
-6.2
+### 6.1 Firewall
+
+O comando já estava funcionando. Nada foi feito.
+
+### 6.2 HTTP
+
+```
 curl -I https://httpbin.org/response-headers?hello=world
 
 HTTP/2 200 
@@ -137,12 +142,13 @@ server: gunicorn/19.9.0
 hello: world
 access-control-allow-origin: *
 access-control-allow-credentials: true
+```
 
-6.3
+### 6.3 Logs
 
-Criar arquivo de configuração
-vi /etc/logrotate.d/nginx
+Criar arquivo de configuração em `/etc/logrotate.d/nginx`
 
+```
 /var/log/nginx/\*.log {
 	rotate 8
 	weekly
@@ -150,9 +156,10 @@ vi /etc/logrotate.d/nginx
 	missingok
 	notifempty
 }
+```
 
-7
-7.1
+## 7. Filesystem
+### 7.1 Expandir
 Expandir partição LVM
 cfdisk /dev/sdb
 Resize [New size: 5G]
