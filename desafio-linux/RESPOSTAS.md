@@ -1,6 +1,7 @@
 # Respostas
 
-##1. Kernel e Bootloader
+## 1. Kernel e Bootloader
+
 Entrar em modo single user na tela do GRUB, adicionando o parâmetro `rd.break` ao final da linha 'linux'
 
 Montar o sistema de arquivos em leitura/escrita com o comando:
@@ -23,8 +24,9 @@ passwd vagrant
 reboot
 ```
 
-##2. Usuários
-###2.1 Criação de usuários
+## 2. Usuários
+
+### 2.1 Criação de usuários
 
 ```
 groupadd -g 2222 getup
@@ -40,16 +42,16 @@ E adicionar a linha:
 
 `getup	ALL=(ALL)	NOPASSWD:ALL`
 
-##3. SSH
+## 3. SSH
 
-###3.1 Autenticação confiável
+### 3.1 Autenticação confiável
 
 ```
 vi /etc/ssh/sshd\_config
 PasswordAuthentication no
 ```
 
-###3.2 Criação de chaves
+### 3.2 Criação de chaves
 
 Criar as chaves na máquina local:
 
@@ -69,7 +71,7 @@ Realizar a conexão SSH:
 ssh vagrant@192.168.0.45
 ```
 
-###3.3 Análise de logs e configurações SSH
+### 3.3 Análise de logs e configurações SSH
 
 Converter o arquivo para formato de Chave Primária:
 
